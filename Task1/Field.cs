@@ -116,8 +116,10 @@ namespace Task1
                         }
                     }
                 }
+
+                Console.WriteLine($"After {count}st loop:");            //need make more abstract
+                ShowFieldConsole();
             }
-            Console.WriteLine("Count of loops:" + count);
         }
     }
 }

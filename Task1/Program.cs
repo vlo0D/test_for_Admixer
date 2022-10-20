@@ -8,6 +8,4 @@ field.FillField();      //Filling field
 Console.WriteLine("Before");
 field.ShowFieldConsole();
 
-Console.WriteLine("After");
 field.RemoveTriples();
-field.ShowFieldConsole();
