@@ -21,18 +21,12 @@ namespace Task1
             this.maxNum = maxNum + 1;
         }
 
-        //Filling fild
-        public void FillField()
+        public void Start()
         {
-            var rand = new Random();
-
-            for (int i = 0; i < field.GetLength(0); i++)
-            {
-                for (int j = 0; j < field.GetLength(1); j++)
-                {
-                    field[i, j] = rand.Next(minNum, maxNum);
-                }
-            }
+            FillField();
+            Console.WriteLine("Beginning field:");
+            ShowFieldConsole();
+            RemoveTriples();
         }
 
         public void ShowFieldConsole()
@@ -47,8 +41,21 @@ namespace Task1
                 Console.WriteLine();
             }
         }
+        
+        private void FillField()
+        {
+            var rand = new Random();
 
-        public void RemoveTriples()
+            for (int i = 0; i < field.GetLength(0); i++)
+            {
+                for (int j = 0; j < field.GetLength(1); j++)
+                {
+                    field[i, j] = rand.Next(minNum, maxNum);
+                }
+            }
+        }
+
+        private void RemoveTriples()
         {
             var rand = new Random();
 
@@ -116,8 +123,8 @@ namespace Task1
                         }
                     }
                 }
-
-                Console.WriteLine($"After {count}st loop:");            //need make more abstract
+                
+                Console.WriteLine($"After {count}st circle:");            //need make more abstract
                 ShowFieldConsole();
             }
         }
